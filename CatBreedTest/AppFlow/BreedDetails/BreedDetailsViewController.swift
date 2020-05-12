@@ -21,7 +21,6 @@ class BreedDetailsViewController: UIViewController {
     @IBOutlet weak var lifeSpan: UILabel!
     @IBOutlet weak var breedImage: UIImageView!
     
-    
     // MARK: - Public properties
     var presenter: BreedDetailsPresenterProtocol?
     var configurator: BreedDetailsConfiguratorProtocol?
@@ -47,6 +46,7 @@ class BreedDetailsViewController: UIViewController {
 }
 
 extension BreedDetailsViewController: BreedDetailsViewProtocol {
+    
     func showDetails(_ breed: BreedResponse, image: UIImage) {
         mainThread {
             self.name.text = breed.name

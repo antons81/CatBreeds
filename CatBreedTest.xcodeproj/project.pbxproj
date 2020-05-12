@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1E3B8DF5246140C300E169DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B8DF4246140C300E169DC /* AppDelegate.swift */; };
 		1E3B8DF7246140C300E169DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B8DF6246140C300E169DC /* SceneDelegate.swift */; };
-		1E3B8DF9246140C300E169DC /* CatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B8DF8246140C300E169DC /* CatListViewController.swift */; };
 		1E3B8DFC246140C300E169DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3B8DFA246140C300E169DC /* Main.storyboard */; };
 		1E3B8DFE246140C600E169DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E3B8DFD246140C600E169DC /* Assets.xcassets */; };
 		1E3B8E01246140C600E169DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3B8DFF246140C600E169DC /* LaunchScreen.storyboard */; };
@@ -50,13 +49,25 @@
 		1E3B8E6124699B9B00E169DC /* QuizzService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B8E6024699B9B00E169DC /* QuizzService.swift */; };
 		1E3B8E6324699CBD00E169DC /* BreedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B8E6224699CBD00E169DC /* BreedImage.swift */; };
 		1E8D9A1A246A8E00000C2CD3 /* BreedDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A19246A8E00000C2CD3 /* BreedDetailService.swift */; };
+		1E8D9A26246ADB0E000C2CD3 /* CatGalleryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A22246ADB0E000C2CD3 /* CatGalleryPresenter.swift */; };
+		1E8D9A27246ADB0E000C2CD3 /* CatGalleryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A23246ADB0E000C2CD3 /* CatGalleryRouter.swift */; };
+		1E8D9A28246ADB0E000C2CD3 /* CatGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A24246ADB0E000C2CD3 /* CatGalleryViewController.swift */; };
+		1E8D9A29246ADB0E000C2CD3 /* CatGalleryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A25246ADB0E000C2CD3 /* CatGalleryConfigurator.swift */; };
+		1E8D9A2C246ADEAA000C2CD3 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D9A2B246ADEAA000C2CD3 /* ImageCell.xib */; };
+		1E8D9A2E246ADEBD000C2CD3 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A2D246ADEBD000C2CD3 /* ImageCell.swift */; };
+		1E8D9A30246B19D6000C2CD3 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A2F246B19D6000C2CD3 /* ImageService.swift */; };
+		1E8D9A36246B3620000C2CD3 /* ImageDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A32246B3620000C2CD3 /* ImageDetailPresenter.swift */; };
+		1E8D9A37246B3620000C2CD3 /* ImageDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A33246B3620000C2CD3 /* ImageDetailRouter.swift */; };
+		1E8D9A38246B3620000C2CD3 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A34246B3620000C2CD3 /* ImageDetailViewController.swift */; };
+		1E8D9A39246B3620000C2CD3 /* ImageDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A35246B3620000C2CD3 /* ImageDetailConfigurator.swift */; };
+		1E8D9A3B246B3E14000C2CD3 /* catLogo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D9A3A246B3E14000C2CD3 /* catLogo.gif */; };
+		1E8D9A3E246B3EEE000C2CD3 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A3D246B3EEE000C2CD3 /* StartScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1E3B8DF1246140C300E169DC /* CatBreedTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatBreedTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3B8DF4246140C300E169DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E3B8DF6246140C300E169DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1E3B8DF8246140C300E169DC /* CatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListViewController.swift; sourceTree = "<group>"; };
 		1E3B8DFB246140C300E169DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1E3B8DFD246140C600E169DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E3B8E00246140C600E169DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,6 +109,19 @@
 		1E3B8E6024699B9B00E169DC /* QuizzService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzService.swift; sourceTree = "<group>"; };
 		1E3B8E6224699CBD00E169DC /* BreedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImage.swift; sourceTree = "<group>"; };
 		1E8D9A19246A8E00000C2CD3 /* BreedDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailService.swift; sourceTree = "<group>"; };
+		1E8D9A22246ADB0E000C2CD3 /* CatGalleryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGalleryPresenter.swift; sourceTree = "<group>"; };
+		1E8D9A23246ADB0E000C2CD3 /* CatGalleryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGalleryRouter.swift; sourceTree = "<group>"; };
+		1E8D9A24246ADB0E000C2CD3 /* CatGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGalleryViewController.swift; sourceTree = "<group>"; };
+		1E8D9A25246ADB0E000C2CD3 /* CatGalleryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGalleryConfigurator.swift; sourceTree = "<group>"; };
+		1E8D9A2B246ADEAA000C2CD3 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		1E8D9A2D246ADEBD000C2CD3 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		1E8D9A2F246B19D6000C2CD3 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		1E8D9A32246B3620000C2CD3 /* ImageDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailPresenter.swift; sourceTree = "<group>"; };
+		1E8D9A33246B3620000C2CD3 /* ImageDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailRouter.swift; sourceTree = "<group>"; };
+		1E8D9A34246B3620000C2CD3 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		1E8D9A35246B3620000C2CD3 /* ImageDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailConfigurator.swift; sourceTree = "<group>"; };
+		1E8D9A3A246B3E14000C2CD3 /* catLogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = catLogo.gif; sourceTree = "<group>"; };
+		1E8D9A3D246B3EEE000C2CD3 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,15 +154,17 @@
 		1E3B8DF3246140C300E169DC /* CatBreedTest */ = {
 			isa = PBXGroup;
 			children = (
+				1E8D9A1C246ACF4A000C2CD3 /* CustomUI */,
 				1E3B8E572469913600E169DC /* AppFlow */,
 				1E3B8E092461410A00E169DC /* Networking */,
 				1E3B8E082461410100E169DC /* Extensions */,
-				1E3B8E0A246141A800E169DC /* CatsListViewController */,
 				1E3B8DF4246140C300E169DC /* AppDelegate.swift */,
 				1E3B8DF6246140C300E169DC /* SceneDelegate.swift */,
 				1E3B8DFA246140C300E169DC /* Main.storyboard */,
+				1E8D9A3C246B3E1A000C2CD3 /* SupportedFiles */,
 				1E3B8DFD246140C600E169DC /* Assets.xcassets */,
 				1E3B8DFF246140C600E169DC /* LaunchScreen.storyboard */,
+				1E8D9A3D246B3EEE000C2CD3 /* StartScreenViewController.swift */,
 				1E3B8E02246140C600E169DC /* Info.plist */,
 			);
 			path = CatBreedTest;
@@ -164,14 +190,6 @@
 				1E3B8E192462EEF800E169DC /* Endpoint */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		1E3B8E0A246141A800E169DC /* CatsListViewController */ = {
-			isa = PBXGroup;
-			children = (
-				1E3B8DF8246140C300E169DC /* CatListViewController.swift */,
-			);
-			path = CatsListViewController;
 			sourceTree = "<group>";
 		};
 		1E3B8E0B246141C100E169DC /* Cells */ = {
@@ -286,8 +304,58 @@
 				1E3B8E312465C47A00E169DC /* Breeds */,
 				1E3B8E4D2468937100E169DC /* BreedDetails */,
 				1E3B8E562469912200E169DC /* Quizz */,
+				1E8D9A21246ADACA000C2CD3 /* Gallery */,
+				1E8D9A31246B3602000C2CD3 /* ImageDetail */,
 			);
 			path = AppFlow;
+			sourceTree = "<group>";
+		};
+		1E8D9A1C246ACF4A000C2CD3 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		1E8D9A21246ADACA000C2CD3 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				1E8D9A2A246ADE9A000C2CD3 /* Cells */,
+				1E8D9A22246ADB0E000C2CD3 /* CatGalleryPresenter.swift */,
+				1E8D9A23246ADB0E000C2CD3 /* CatGalleryRouter.swift */,
+				1E8D9A24246ADB0E000C2CD3 /* CatGalleryViewController.swift */,
+				1E8D9A25246ADB0E000C2CD3 /* CatGalleryConfigurator.swift */,
+				1E8D9A2F246B19D6000C2CD3 /* ImageService.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		1E8D9A2A246ADE9A000C2CD3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1E8D9A2B246ADEAA000C2CD3 /* ImageCell.xib */,
+				1E8D9A2D246ADEBD000C2CD3 /* ImageCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1E8D9A31246B3602000C2CD3 /* ImageDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1E8D9A32246B3620000C2CD3 /* ImageDetailPresenter.swift */,
+				1E8D9A33246B3620000C2CD3 /* ImageDetailRouter.swift */,
+				1E8D9A34246B3620000C2CD3 /* ImageDetailViewController.swift */,
+				1E8D9A35246B3620000C2CD3 /* ImageDetailConfigurator.swift */,
+			);
+			path = ImageDetail;
+			sourceTree = "<group>";
+		};
+		1E8D9A3C246B3E1A000C2CD3 /* SupportedFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1E8D9A3A246B3E14000C2CD3 /* catLogo.gif */,
+			);
+			path = SupportedFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +419,8 @@
 				1E3B8E412465D1D600E169DC /* BreedsCell.xib in Resources */,
 				1E3B8E01246140C600E169DC /* LaunchScreen.storyboard in Resources */,
 				1E3B8DFE246140C600E169DC /* Assets.xcassets in Resources */,
+				1E8D9A2C246ADEAA000C2CD3 /* ImageCell.xib in Resources */,
+				1E8D9A3B246B3E14000C2CD3 /* catLogo.gif in Resources */,
 				1E3B8DFC246140C300E169DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,9 +441,13 @@
 				1E3B8E482467326E00E169DC /* NavigationRouter.swift in Sources */,
 				1E3B8E0D246141D500E169DC /* BreedsCell.swift in Sources */,
 				1E3B8E302464A73A00E169DC /* NetworkManager.swift in Sources */,
+				1E8D9A37246B3620000C2CD3 /* ImageDetailRouter.swift in Sources */,
 				1E3B8E382465C4C400E169DC /* BreedsViewController.swift in Sources */,
 				1E3B8E372465C4C400E169DC /* BreedsRouter.swift in Sources */,
-				1E3B8DF9246140C300E169DC /* CatListViewController.swift in Sources */,
+				1E8D9A29246ADB0E000C2CD3 /* CatGalleryConfigurator.swift in Sources */,
+				1E8D9A2E246ADEBD000C2CD3 /* ImageCell.swift in Sources */,
+				1E8D9A3E246B3EEE000C2CD3 /* StartScreenViewController.swift in Sources */,
+				1E8D9A26246ADB0E000C2CD3 /* CatGalleryPresenter.swift in Sources */,
 				1E3B8E202462EFD800E169DC /* HTTPMethod.swift in Sources */,
 				1E3B8E3F2465CDD800E169DC /* BreedsService.swift in Sources */,
 				1E3B8E2E2464A14900E169DC /* CatBreedsEndPoint.swift in Sources */,
@@ -381,12 +455,16 @@
 				1E3B8E52246899C800E169DC /* BreedDetailsPresenter.swift in Sources */,
 				1E3B8E54246899C800E169DC /* BreedDetailsViewController.swift in Sources */,
 				1E3B8DF5246140C300E169DC /* AppDelegate.swift in Sources */,
+				1E8D9A27246ADB0E000C2CD3 /* CatGalleryRouter.swift in Sources */,
+				1E8D9A36246B3620000C2CD3 /* ImageDetailPresenter.swift in Sources */,
 				1E3B8E492467326E00E169DC /* NavigationController.swift in Sources */,
 				1E3B8E3D2465C68900E169DC /* UIViewController+extensions.swift in Sources */,
+				1E8D9A39246B3620000C2CD3 /* ImageDetailConfigurator.swift in Sources */,
 				1E3B8E4A2467326E00E169DC /* NavigationConfigurator.swift in Sources */,
 				1E3B8E2A246315E800E169DC /* NetworkRouter.swift in Sources */,
 				1E3B8E55246899C800E169DC /* BreedDetailsConfigurator.swift in Sources */,
 				1E3B8E5D2469915E00E169DC /* QuizzRouter.swift in Sources */,
+				1E8D9A38246B3620000C2CD3 /* ImageDetailViewController.swift in Sources */,
 				1E3B8E282463133E00E169DC /* JSONParameterEncoder.swift in Sources */,
 				1E3B8E362465C4C400E169DC /* BreedsPresenter.swift in Sources */,
 				1E3B8E392465C4C400E169DC /* BreedsConfigurator.swift in Sources */,
@@ -396,10 +474,12 @@
 				1E3B8E3B2465C51500E169DC /* Utils.swift in Sources */,
 				1E3B8E4C24687F5300E169DC /* UITableView+extensions.swift in Sources */,
 				1E3B8E472467326E00E169DC /* NavigationPresenter.swift in Sources */,
+				1E8D9A30246B19D6000C2CD3 /* ImageService.swift in Sources */,
 				1E3B8E53246899C800E169DC /* BreedDetailsRouter.swift in Sources */,
 				1E3B8E5F2469915E00E169DC /* QuizzConfigurator.swift in Sources */,
 				1E3B8E242462F11700E169DC /* ParameterEncoding.swift in Sources */,
 				1E3B8DF7246140C300E169DC /* SceneDelegate.swift in Sources */,
+				1E8D9A28246ADB0E000C2CD3 /* CatGalleryViewController.swift in Sources */,
 				1E3B8E162461769D00E169DC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

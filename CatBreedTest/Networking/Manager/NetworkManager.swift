@@ -36,16 +36,6 @@ class NetworkManager {
         }
     }
     
-    func imageDownloader(with url: String, completion: (UIImage) -> Void) {
-        guard let url = URL(string: url) else { return }
-        var image: UIImage!
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
-            image = UIImage(data: data)
-        }
-        completion(image)
-    }
-    
     func getCatBreeds(page: Int, limit: Int, completion: @escaping (_ breeds: Breeds?, _ error: String?) -> Void) {
         
         router.request(.getBreeds(page: page, limit: limit)) { (data, response, error) in
@@ -78,6 +68,35 @@ class NetworkManager {
     
     func getImageBy(_ breedId: String, completion: @escaping (_ breedImage: [BreedImage]?, _ error: String?) -> Void) {
         router.request(.getImageBy(limit: 1, breedId: breedId)) { (data, response, error) in
+            
+            if error != nil {
+                completion(nil, "please check your network connection")
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(response)
+                
+                switch result {
+                case .success:
+                    guard let data = data else {
+                        completion(nil, NetworkResponse.noData.rawValue)
+                        return
+                    }
+                    do {
+                        let response = try JSONDecoder().decode([BreedImage].self, from: data)
+                        completion(response, nil)
+                    } catch {
+                        completion(nil, NetworkResponse.unableToDecode.rawValue)
+                    }
+                case .failure(let error):
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+    
+    func getImages(_ page: Int, limit: Int, completion: @escaping (_ breedImage: [BreedImage]?, _ error: String?) -> Void) {
+        router.request(.getImages(page: page, limit: limit)) { (data, response, error) in
             
             if error != nil {
                 completion(nil, "please check your network connection")

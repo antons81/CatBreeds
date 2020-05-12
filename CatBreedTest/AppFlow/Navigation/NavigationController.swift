@@ -39,6 +39,7 @@ class NavigationController: UINavigationController {
 
 extension NavigationController: NavigationProtocol {
     func setRootViewController() {
-        self.setViewControllers([BreedsConfigurator().makeViewController()], animated: true)
+        let breeds = BreedsConfigurator().makeViewController()
+        self.setViewControllers([breeds], animated: true)
     }
 }

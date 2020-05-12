@@ -13,7 +13,9 @@ protocol BreedsPresenterProtocol: class {
     func viewDidLoad()
     func fetchBreeds(_ limit: Int)
     func openQuizz()
+    func openGallery()
 }
+
 
 class BreedsPresenter: NSObject {
     
@@ -42,6 +44,10 @@ class BreedsPresenter: NSObject {
 }
 
 extension BreedsPresenter: BreedsPresenterProtocol {
+    
+    func openGallery() {
+        router.openGallery()
+    }
     
     func openQuizz() {
         router.openQuizz()

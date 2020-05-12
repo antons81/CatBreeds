@@ -37,3 +37,16 @@ extension UITableView {
         return self.dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath as IndexPath) as! T
     }
 }
+
+
+extension UICollectionView {
+    
+    func registerCellNib<T: UICollectionViewCell>(_: T.Type) where T: NibReusable {
+        let nib = UINib(nibName: String(describing: T.self), bundle: nil)
+        self.register(nib, forCellWithReuseIdentifier: T.reuseIdentifier)
+    }
+    
+    func dequeueReusableCell<T: Reusable>(indexPath: IndexPath) -> T {
+        return self.dequeueReusableCell(withReuseIdentifier: T.reuseIdentifier, for: indexPath as IndexPath) as! T
+    }
+}

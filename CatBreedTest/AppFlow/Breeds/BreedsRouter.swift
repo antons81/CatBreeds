@@ -12,6 +12,7 @@ protocol BreedsRouterProtocol: class {
     var view: BreedsViewController? { get set }
     func openBreedDetails(_ breed: BreedResponse)
     func openQuizz()
+    func openGallery()
 }
 
 class BreedsRouter {
@@ -26,6 +27,11 @@ class BreedsRouter {
 }
 
 extension BreedsRouter: BreedsRouterProtocol {
+    
+    func openGallery() {
+        let gallery = CatGalleryConfigurator().makeViewController()
+        view?.navigationController?.show(gallery, sender: self)
+    }
     
     func openQuizz() {
         let quizz = QuizzConfigurator().makeViewController()

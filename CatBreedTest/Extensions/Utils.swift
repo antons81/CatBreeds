@@ -15,4 +15,10 @@ func mainThread(_ completion: (() -> Void)?) {
     }
 }
 
+func mainThreadAfter(_ deadline: Double, _ completion: (() ->())?) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + deadline) {
+        completion?()
+    }
+}
+
 

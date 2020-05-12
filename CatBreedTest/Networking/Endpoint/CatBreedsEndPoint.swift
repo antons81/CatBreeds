@@ -11,7 +11,7 @@ import Foundation
 
 public enum BreedsApi {
     case getBreeds(page: Int?, limit: Int)
-    case getImages(limit: Int)
+    case getImages(page: Int, limit: Int)
     case getImageBy(limit: Int, breedId: String)
 }
 
@@ -46,12 +46,12 @@ extension BreedsApi: EndPointType {
         case .getBreeds(let page, let limit):
             return .requestParameters(bodyParameters: nil,
                                       urlParameters: ["page": page ?? 0, "limit": limit])
-        case .getImages(let limit):
+        case .getImages(let page, let limit):
             return .requestParameters(bodyParameters: nil,
-                                      urlParameters: ["limit": limit])
+                                      urlParameters: ["page": page,"limit": limit, "size": "thumb"])
         case .getImageBy(let limit, let breedId):
             return .requestParameters(bodyParameters: nil,
-                                      urlParameters: ["breed_id": breedId, "limit": limit])
+                                      urlParameters: ["breed_id": breedId, "limit": limit, "size": "thumb"])
             
         }
     }

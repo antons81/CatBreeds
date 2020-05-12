@@ -40,6 +40,10 @@ class BreedsViewController: UIViewController {
         presenter?.openQuizz()
     }
     
+    @IBAction func getToGallery() {
+        presenter?.openGallery()
+    }
+    
     // MARK: - Overrides
     
     // MARK: - Private functions

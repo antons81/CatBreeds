@@ -15,9 +15,4 @@ class BreedsCell: UITableViewCell, NibReusable {
     func setupCell(_ cat: BreedResponse) {
         breed.text = cat.name
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        //breed.text = nil
-    }
 }

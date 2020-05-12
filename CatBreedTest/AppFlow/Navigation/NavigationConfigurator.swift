@@ -24,7 +24,6 @@ extension NavigationConfigurator: NavigationConfiguratorProtocol {
         }
         
         viewController.configurator = self
-        viewController.title = "Breeds"
         return viewController
     }
 

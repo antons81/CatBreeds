@@ -49,12 +49,15 @@ class QuizzViewController: UIViewController {
     }
     
     // MARK: - Display logic
+    
     private func animateAnswer(_ sender: UIButton, isRight: Bool) {
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             sender.backgroundColor = isRight ? .green : .red
         }) { _ in
-            self.presenter?.fetchBreeds(self.page)
-            sender.backgroundColor = .systemBlue
+            mainThreadAfter(1) {
+                self.presenter?.fetchBreeds(self.page)
+                sender.backgroundColor = .systemBlue
+            }
         }
     }
     
@@ -65,7 +68,6 @@ class QuizzViewController: UIViewController {
     
     // MARK: - Private functions
     private func answerChecker(_ sender: UIButton) {
-        print(sender.tag)
         if sender.tag == rightAnswer {
             animateAnswer(sender, isRight: true)
         } else {
@@ -80,8 +82,6 @@ extension QuizzViewController: QuizzViewProtocol {
     func composeQA(_ breeds: Breeds, answer: Int, image: UIImage) {
         
         rightAnswer = answer
-        //print("right answer tag " + "\(rightAnswer)")
-        
         mainThread {
             self.questionImage.image = image
         }
@@ -90,7 +90,6 @@ extension QuizzViewController: QuizzViewProtocol {
             mainThread {
                 value.tag = index
                 value.setTitle(breeds[index].name, for: .normal)
-                //print("set name " + breeds[index].name)
             }
         }
     }
