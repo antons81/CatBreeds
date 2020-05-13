@@ -27,6 +27,12 @@ class CatGalleryPresenter: NSObject {
         }
     }
     
+    private var img = [UIImage]() {
+        didSet {
+           view?.reloadData()
+        }
+    }
+    
     // MARK: - Initialization
     init(router: CatGalleryRouterProtocol,
          view: CatGalleryViewProtocol,
@@ -40,6 +46,7 @@ class CatGalleryPresenter: NSObject {
     private func fetchImages(_ page: Int, limit: Int) {
         service.fetchImages(page: page, limit: limit) { [weak self] images in
             self?.images = images
+            //URLSession.shared.
         }
     }
 }

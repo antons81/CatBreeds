@@ -19,10 +19,12 @@ class QuizzViewController: UIViewController {
     @IBOutlet weak var questionImage: UIImageView!
     
     // MARK: - Buttons
-    @IBOutlet weak var answer1: UIButton!
-    @IBOutlet weak var answer2: UIButton!
-    @IBOutlet weak var answer3: UIButton!
-    @IBOutlet weak var answer4: UIButton!
+    @IBOutlet var answer1: UIButton!
+    @IBOutlet var answer2: UIButton!
+    @IBOutlet var answer3: UIButton!
+    @IBOutlet var answer4: UIButton!
+    
+    @IBOutlet var scoreButton: UIBarButtonItem!
     
     var answerButtons: [UIButton]!
     
@@ -33,6 +35,7 @@ class QuizzViewController: UIViewController {
     // MARK: - Private properties
     private var rightAnswer = 0
     private var page = 1
+    private var score = 0
     
     // MARK: - View lifecycle
     
@@ -53,10 +56,10 @@ class QuizzViewController: UIViewController {
     // MARK: - Display logic
     
     private func animateAnswer(_ sender: UIButton, isRight: Bool) {
-        UIView.animate(withDuration: 0.1, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             sender.backgroundColor = isRight ? .green : .red
         }) { _ in
-            mainThreadAfter(1) {
+            mainThreadAfter(0.3) {
                 self.presenter?.fetchBreeds(self.page)
                 sender.backgroundColor = .systemBlue
             }
@@ -72,6 +75,7 @@ class QuizzViewController: UIViewController {
     private func answerChecker(_ sender: UIButton) {
         if sender.tag == rightAnswer {
             animateAnswer(sender, isRight: true)
+            score += 5
         } else {
             animateAnswer(sender, isRight: false)
         }
@@ -82,22 +86,28 @@ class QuizzViewController: UIViewController {
 extension QuizzViewController: QuizzViewProtocol {
     
     func showSpinner() {
-        showProgress()
+        AlertManager.shared.showProgress()
+        
     }
     
     func hideSpinner() {
-        dismissProgress()
+        AlertManager.shared.dismissProgress {}
     }
     
     func composeQA(_ breeds: Breeds, answer: Int, image: UIImage, _ completion: (() -> Void)?) {
-        
         rightAnswer = answer
+        
         mainThread {
+            self.scoreButton.title = "Score: \(self.score)"
             self.questionImage.image = image
         }
         
         for (index, value) in answerButtons.enumerated() {
             mainThread {
+                if breeds.count <= 3  {
+                    self.page = 0
+                    self.presenter?.fetchBreeds(self.page)
+                }
                 value.tag = index
                 value.setTitle(breeds[index].name, for: .normal)
             }

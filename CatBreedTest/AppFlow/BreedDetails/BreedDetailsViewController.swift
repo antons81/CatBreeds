@@ -50,11 +50,11 @@ class BreedDetailsViewController: UIViewController {
 extension BreedDetailsViewController: BreedDetailsViewProtocol {
     
     func showSpinner() {
-        showProgress()
+        AlertManager.shared.showProgress()
     }
     
     func hideSpinner() {
-        dismissProgress()
+        AlertManager.shared.dismissProgress {}
     }
     
     func showDetails(_ breed: BreedResponse, image: UIImage) {

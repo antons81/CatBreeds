@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Breeds View Controller-->
+        <!--Breeds-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="BreedsViewController" id="BYZ-38-t0r" customClass="BreedsViewController" customModule="CatBreedTest" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MWB-OL-JJZ">
+                    <navigationItem key="navigationItem" title="Breeds" id="MWB-OL-JJZ">
                         <barButtonItem key="leftBarButtonItem" title="Quizz Game" id="ij0-HE-0gE">
                             <connections>
                                 <action selector="getToQuizz" destination="BYZ-38-t0r" id="uPV-A1-JWJ"/>
@@ -288,48 +288,68 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3T9-cS-NdU">
-                                                <rect key="frame" x="16" y="316.5" width="382" height="280"/>
+                                                <rect key="frame" x="40" y="316.5" width="334" height="280"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1w-1o-Vcg">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="55"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                         <state key="normal" title="Answer">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="7"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="checkTheAnswer:" destination="m4r-6l-bQc" eventType="touchUpInside" id="jzw-b2-6CD"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsb-uq-nLQ">
-                                                        <rect key="frame" x="0.0" y="75" width="382" height="55"/>
+                                                        <rect key="frame" x="0.0" y="75" width="334" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                         <state key="normal" title="Answer">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="7"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="checkTheAnswer:" destination="m4r-6l-bQc" eventType="touchUpInside" id="jej-CF-DhT"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rot-xt-YbP">
-                                                        <rect key="frame" x="0.0" y="150" width="382" height="55"/>
+                                                        <rect key="frame" x="0.0" y="150" width="334" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                         <state key="normal" title="Answer">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="7"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="checkTheAnswer:" destination="m4r-6l-bQc" eventType="touchUpInside" id="BxY-9O-qHt"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veV-Ry-AK8">
-                                                        <rect key="frame" x="0.0" y="225" width="382" height="55"/>
+                                                        <rect key="frame" x="0.0" y="225" width="334" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                         <state key="normal" title="Answer">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="7"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="checkTheAnswer:" destination="m4r-6l-bQc" eventType="touchUpInside" id="xMI-0Q-6Aa"/>
                                                         </connections>
@@ -340,7 +360,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="ZJs-ro-NMe" firstAttribute="leading" secondItem="oVN-y9-zBf" secondAttribute="leading" id="10P-zd-Cwm"/>
                                             <constraint firstItem="ZEv-M3-VpK" firstAttribute="leading" secondItem="oVN-y9-zBf" secondAttribute="leading" id="I2a-di-Ohy"/>
@@ -348,9 +368,9 @@
                                             <constraint firstItem="ZJs-ro-NMe" firstAttribute="top" secondItem="oVN-y9-zBf" secondAttribute="top" id="Rw6-XI-Hfc"/>
                                             <constraint firstAttribute="trailing" secondItem="ZJs-ro-NMe" secondAttribute="trailing" id="Vpy-eE-Dv2"/>
                                             <constraint firstItem="3T9-cS-NdU" firstAttribute="top" secondItem="ZEv-M3-VpK" secondAttribute="bottom" constant="12" id="fab-ft-WPv"/>
-                                            <constraint firstAttribute="trailing" secondItem="3T9-cS-NdU" secondAttribute="trailing" constant="16" id="pdG-aJ-XQZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="3T9-cS-NdU" secondAttribute="trailing" constant="40" id="pdG-aJ-XQZ"/>
                                             <constraint firstAttribute="trailing" secondItem="ZEv-M3-VpK" secondAttribute="trailing" id="vLH-5b-WJr"/>
-                                            <constraint firstItem="3T9-cS-NdU" firstAttribute="leading" secondItem="oVN-y9-zBf" secondAttribute="leading" constant="16" id="y24-tR-ncm"/>
+                                            <constraint firstItem="3T9-cS-NdU" firstAttribute="leading" secondItem="oVN-y9-zBf" secondAttribute="leading" constant="40" id="y24-tR-ncm"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -364,7 +384,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qUD-gR-Hs7" firstAttribute="width" secondItem="HeV-7L-eck" secondAttribute="width" id="41R-dm-Zo0"/>
                             <constraint firstItem="qUD-gR-Hs7" firstAttribute="leading" secondItem="bKR-pe-EQz" secondAttribute="leading" id="7Sz-qj-2o6"/>
@@ -374,12 +394,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bKR-pe-EQz"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Quizz" id="Hlg-ft-RPK">
+                        <barButtonItem key="rightBarButtonItem" title="Score: 0" id="Uyr-wX-c5G">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="answer1" destination="B1w-1o-Vcg" id="Q6H-3M-TPV"/>
                         <outlet property="answer2" destination="bsb-uq-nLQ" id="vmU-VK-Gkl"/>
                         <outlet property="answer3" destination="Rot-xt-YbP" id="1g7-KC-Bgr"/>
                         <outlet property="answer4" destination="veV-Ry-AK8" id="OxE-7k-yeR"/>
                         <outlet property="questionImage" destination="ZEv-M3-VpK" id="FyN-Iy-2qe"/>
+                        <outlet property="scoreButton" destination="Uyr-wX-c5G" id="tt4-Fi-td5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="luL-IQ-OrZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

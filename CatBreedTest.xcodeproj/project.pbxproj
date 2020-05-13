@@ -62,6 +62,7 @@
 		1E8D9A39246B3620000C2CD3 /* ImageDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A35246B3620000C2CD3 /* ImageDetailConfigurator.swift */; };
 		1E8D9A3B246B3E14000C2CD3 /* catLogo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D9A3A246B3E14000C2CD3 /* catLogo.gif */; };
 		1E8D9A3E246B3EEE000C2CD3 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A3D246B3EEE000C2CD3 /* StartScreenViewController.swift */; };
+		1E8D9A42246C992F000C2CD3 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A41246C992F000C2CD3 /* AlertManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +123,7 @@
 		1E8D9A35246B3620000C2CD3 /* ImageDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailConfigurator.swift; sourceTree = "<group>"; };
 		1E8D9A3A246B3E14000C2CD3 /* catLogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = catLogo.gif; sourceTree = "<group>"; };
 		1E8D9A3D246B3EEE000C2CD3 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
+		1E8D9A41246C992F000C2CD3 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				1E3B8E572469913600E169DC /* AppFlow */,
 				1E3B8E092461410A00E169DC /* Networking */,
 				1E3B8E082461410100E169DC /* Extensions */,
+				1E8D9A43246C9E95000C2CD3 /* Utils */,
 				1E3B8DF4246140C300E169DC /* AppDelegate.swift */,
 				1E3B8DF6246140C300E169DC /* SceneDelegate.swift */,
 				1E3B8DFA246140C300E169DC /* Main.storyboard */,
@@ -173,7 +176,6 @@
 		1E3B8E082461410100E169DC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1E3B8E3A2465C51500E169DC /* Utils.swift */,
 				1E3B8E3C2465C68900E169DC /* UIViewController+extensions.swift */,
 				1E3B8E4B24687F5300E169DC /* UITableView+extensions.swift */,
 			);
@@ -358,6 +360,15 @@
 			path = SupportedFiles;
 			sourceTree = "<group>";
 		};
+		1E8D9A43246C9E95000C2CD3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1E3B8E3A2465C51500E169DC /* Utils.swift */,
+				1E8D9A41246C992F000C2CD3 /* AlertManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -474,6 +485,7 @@
 				1E3B8E3B2465C51500E169DC /* Utils.swift in Sources */,
 				1E3B8E4C24687F5300E169DC /* UITableView+extensions.swift in Sources */,
 				1E3B8E472467326E00E169DC /* NavigationPresenter.swift in Sources */,
+				1E8D9A42246C992F000C2CD3 /* AlertManager.swift in Sources */,
 				1E8D9A30246B19D6000C2CD3 /* ImageService.swift in Sources */,
 				1E3B8E53246899C800E169DC /* BreedDetailsRouter.swift in Sources */,
 				1E3B8E5F2469915E00E169DC /* QuizzConfigurator.swift in Sources */,

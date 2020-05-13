@@ -38,30 +38,3 @@ extension UINavigationController {
         return nil
     }
 }
-
-
-fileprivate let alertVc = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-
-extension UIViewController {
-    
-    func showProgress() {
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10,
-                                                                     y: 5,
-                                                                     width: 50,
-                                                                     height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.large
-        loadingIndicator.startAnimating()
-
-        alertVc.view.addSubview(loadingIndicator)
-        mainThread {
-            self.navigationController?.present(alertVc, animated: true, completion: nil)
-        }
-    }
-    
-    func dismissProgress() {
-        mainThread {
-            alertVc.dismiss(animated: true, completion: nil)
-        }
-    }
-}

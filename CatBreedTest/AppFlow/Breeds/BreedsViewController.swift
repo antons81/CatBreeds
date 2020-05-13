@@ -54,11 +54,11 @@ class BreedsViewController: UIViewController {
 extension BreedsViewController: BreedsViewProtocol {
     
     func showSpinner() {
-        showProgress()
+        AlertManager.shared.showProgress()
     }
     
     func hideSpinner() {
-        dismissProgress()
+        AlertManager.shared.dismissProgress {}
     }
     
     func configureTableView() {

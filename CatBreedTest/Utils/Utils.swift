@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 func mainThread(_ completion: (() -> Void)?) {
     DispatchQueue.main.async {
         completion?()
