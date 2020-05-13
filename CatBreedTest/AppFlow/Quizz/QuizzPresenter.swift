@@ -16,7 +16,6 @@ protocol QuizzPresenterProtocol: class {
 
 class QuizzPresenter {
     
-    
     // MARK: - Public variables
     internal weak var view: QuizzViewProtocol?
 
@@ -41,8 +40,8 @@ extension QuizzPresenter: QuizzPresenterProtocol {
     func fetchBreeds(_ page: Int) {
         view?.showSpinner()
         var randomIndex = 0
-        service.fetchBreeds(page: page) { [weak self] breeds in
         
+        service.fetchBreeds(page: page) { [weak self] breeds in
             for _ in breeds {
                 randomIndex = Int(arc4random()) % breeds.count
                 break
@@ -52,8 +51,10 @@ extension QuizzPresenter: QuizzPresenterProtocol {
                 guard let url = URL(string: image.url) else { return }
                 guard let data = try? Data(contentsOf: url) else { return }
                 guard let image  = UIImage(data: data) else { return }
-                self?.view?.composeQA(breeds, answer: randomIndex, image: image)
-                self?.view?.hideSpinner()
+                
+                self?.view?.composeQA(breeds, answer: randomIndex, image: image) {
+                    self?.view?.hideSpinner()
+                }
             }
         }
     }

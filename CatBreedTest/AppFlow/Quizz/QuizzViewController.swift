@@ -9,7 +9,7 @@
 import UIKit
 
 protocol QuizzViewProtocol: class {
-    func composeQA(_ breeds: Breeds, answer: Int, image: UIImage)
+    func composeQA(_ breeds: Breeds, answer: Int, image: UIImage, _ completion: (() -> Void)?)
     func showSpinner()
     func hideSpinner()
 }
@@ -89,7 +89,7 @@ extension QuizzViewController: QuizzViewProtocol {
         dismissProgress()
     }
     
-    func composeQA(_ breeds: Breeds, answer: Int, image: UIImage) {
+    func composeQA(_ breeds: Breeds, answer: Int, image: UIImage, _ completion: (() -> Void)?) {
         
         rightAnswer = answer
         mainThread {
@@ -102,5 +102,6 @@ extension QuizzViewController: QuizzViewProtocol {
                 value.setTitle(breeds[index].name, for: .normal)
             }
         }
+        completion?()
     }
 }

@@ -13,8 +13,6 @@ enum StoryBoardName: String {
     case main = "Main"
 }
 
-fileprivate let alertVc = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-
 extension UIViewController {
     
     class var vcName: String {
@@ -42,7 +40,10 @@ extension UINavigationController {
 }
 
 
+fileprivate let alertVc = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+
 extension UIViewController {
+    
     func showProgress() {
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10,
                                                                      y: 5,
@@ -53,7 +54,9 @@ extension UIViewController {
         loadingIndicator.startAnimating()
 
         alertVc.view.addSubview(loadingIndicator)
-        self.navigationController?.present(alertVc, animated: true, completion: nil)
+        mainThread {
+            self.navigationController?.present(alertVc, animated: true, completion: nil)
+        }
     }
     
     func dismissProgress() {
