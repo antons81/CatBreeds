@@ -60,7 +60,6 @@ extension BreedsApi: EndPointType {
         return ["x-api-key": APIKey]
     }
     
-    
     var baseURL: URL {
         guard let url = URL(string: baseUrl) else { fatalError("baseURL could not be configured." )}
         return url

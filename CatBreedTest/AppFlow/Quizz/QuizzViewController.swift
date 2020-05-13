@@ -10,6 +10,8 @@ import UIKit
 
 protocol QuizzViewProtocol: class {
     func composeQA(_ breeds: Breeds, answer: Int, image: UIImage)
+    func showSpinner()
+    func hideSpinner()
 }
 
 class QuizzViewController: UIViewController {
@@ -78,6 +80,14 @@ class QuizzViewController: UIViewController {
 }
 
 extension QuizzViewController: QuizzViewProtocol {
+    
+    func showSpinner() {
+        showProgress()
+    }
+    
+    func hideSpinner() {
+        dismissProgress()
+    }
     
     func composeQA(_ breeds: Breeds, answer: Int, image: UIImage) {
         

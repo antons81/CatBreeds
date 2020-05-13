@@ -369,10 +369,8 @@
                             <constraint firstItem="qUD-gR-Hs7" firstAttribute="width" secondItem="HeV-7L-eck" secondAttribute="width" id="41R-dm-Zo0"/>
                             <constraint firstItem="qUD-gR-Hs7" firstAttribute="leading" secondItem="bKR-pe-EQz" secondAttribute="leading" id="7Sz-qj-2o6"/>
                             <constraint firstItem="qUD-gR-Hs7" firstAttribute="trailing" secondItem="bKR-pe-EQz" secondAttribute="trailing" id="Fgi-gl-FNS"/>
-                            <constraint firstAttribute="bottom" secondItem="qUD-gR-Hs7" secondAttribute="bottom" id="GsJ-sK-kLT"/>
                             <constraint firstItem="qUD-gR-Hs7" firstAttribute="bottom" secondItem="bKR-pe-EQz" secondAttribute="bottom" constant="34" id="MMp-FE-COr"/>
                             <constraint firstItem="bKR-pe-EQz" firstAttribute="top" secondItem="qUD-gR-Hs7" secondAttribute="top" constant="44" id="fvO-av-3T0"/>
-                            <constraint firstItem="qUD-gR-Hs7" firstAttribute="top" secondItem="HeV-7L-eck" secondAttribute="top" id="nD0-G1-2gl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bKR-pe-EQz"/>
                     </view>

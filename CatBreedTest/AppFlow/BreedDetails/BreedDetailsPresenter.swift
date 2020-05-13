@@ -43,7 +43,6 @@ class BreedDetailsPresenter {
             completion?(image)
         }
     }
-
 }
 
 extension BreedDetailsPresenter: BreedDetailsPresenterProtocol {

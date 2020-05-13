@@ -11,6 +11,8 @@ import UIKit
 protocol BreedsViewProtocol: class {
     func reloadData()
     func configureTableView()
+    func showSpinner()
+    func hideSpinner()
 }
 
 class BreedsViewController: UIViewController {
@@ -50,6 +52,14 @@ class BreedsViewController: UIViewController {
 }
 
 extension BreedsViewController: BreedsViewProtocol {
+    
+    func showSpinner() {
+        showProgress()
+    }
+    
+    func hideSpinner() {
+        dismissProgress()
+    }
     
     func configureTableView() {
         tableView.dataSource = presenter as? UITableViewDataSource

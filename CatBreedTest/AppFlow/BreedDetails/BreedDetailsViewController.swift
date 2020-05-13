@@ -10,6 +10,8 @@ import UIKit
 
 protocol BreedDetailsViewProtocol: class {
     func showDetails(_ breed: BreedResponse, image: UIImage)
+    func showSpinner()
+    func hideSpinner()
 }
 
 class BreedDetailsViewController: UIViewController {
@@ -46,6 +48,14 @@ class BreedDetailsViewController: UIViewController {
 }
 
 extension BreedDetailsViewController: BreedDetailsViewProtocol {
+    
+    func showSpinner() {
+        showProgress()
+    }
+    
+    func hideSpinner() {
+        dismissProgress()
+    }
     
     func showDetails(_ breed: BreedResponse, image: UIImage) {
         mainThread {

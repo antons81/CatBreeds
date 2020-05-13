@@ -39,6 +39,7 @@ class QuizzPresenter {
 extension QuizzPresenter: QuizzPresenterProtocol {
     
     func fetchBreeds(_ page: Int) {
+        view?.showSpinner()
         var randomIndex = 0
         service.fetchBreeds(page: page) { [weak self] breeds in
         
@@ -52,6 +53,7 @@ extension QuizzPresenter: QuizzPresenterProtocol {
                 guard let data = try? Data(contentsOf: url) else { return }
                 guard let image  = UIImage(data: data) else { return }
                 self?.view?.composeQA(breeds, answer: randomIndex, image: image)
+                self?.view?.hideSpinner()
             }
         }
     }

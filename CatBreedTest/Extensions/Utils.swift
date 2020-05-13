@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 func mainThread(_ completion: (() -> Void)?) {
@@ -20,5 +21,3 @@ func mainThreadAfter(_ deadline: Double, _ completion: (() ->())?) {
         completion?()
     }
 }
-
-
