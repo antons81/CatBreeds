@@ -10,7 +10,7 @@ import UIKit
 
 protocol QuizzRouterProtocol: class {
     var view: QuizzViewController? { get set }
-    func openNextScreen()
+    func backToMain()
 }
 
 class QuizzRouter {
@@ -25,7 +25,7 @@ class QuizzRouter {
 }
 
 extension QuizzRouter: QuizzRouterProtocol {
-    func openNextScreen() {
+    func backToMain() {
+        view?.navigationController?.popViewController(animated: true)
     }
-
 }

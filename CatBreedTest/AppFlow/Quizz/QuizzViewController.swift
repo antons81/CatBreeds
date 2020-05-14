@@ -9,9 +9,12 @@
 import UIKit
 
 protocol QuizzViewProtocol: class {
+    var answerButtonsCount: Int { get }
+    var finalScore: Int { get }
     func composeQA(_ breeds: Breeds, answer: Int, image: UIImage, _ completion: (() -> Void)?)
     func showSpinner()
-    func hideSpinner()
+    func hideSpinner(_ completion: SimpleCompletion)
+    func showAlert(with message: String, handler: ((UIAlertAction)->Void)?)
 }
 
 class QuizzViewController: UIViewController {
@@ -85,13 +88,23 @@ class QuizzViewController: UIViewController {
 
 extension QuizzViewController: QuizzViewProtocol {
     
+    var finalScore: Int {
+        return score
+    }
+    
+    var answerButtonsCount: Int {
+        return answerButtons.count
+    }
+    
     func showSpinner() {
-        AlertManager.shared.showProgress()
+        showProgress()
         
     }
     
-    func hideSpinner() {
-        AlertManager.shared.dismissProgress {}
+    func hideSpinner(_ completion: SimpleCompletion) {
+        dismissProgress {
+            completion?()
+        }
     }
     
     func composeQA(_ breeds: Breeds, answer: Int, image: UIImage, _ completion: (() -> Void)?) {
@@ -104,14 +117,11 @@ extension QuizzViewController: QuizzViewProtocol {
         
         for (index, value) in answerButtons.enumerated() {
             mainThread {
-                if breeds.count <= 3  {
-                    self.page = 0
-                    self.presenter?.fetchBreeds(self.page)
-                }
                 value.tag = index
                 value.setTitle(breeds[index].name, for: .normal)
             }
         }
+        
         completion?()
     }
 }

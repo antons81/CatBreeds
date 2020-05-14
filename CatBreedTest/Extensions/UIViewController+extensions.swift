@@ -37,4 +37,56 @@ extension UINavigationController {
         }
         return nil
     }
+    
+    func popViewControllerWithHandler(completion: SimpleCompletion) {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock(completion)
+        popViewController(animated: true)
+        CATransaction.commit()
+    }
+}
+
+
+fileprivate var alertVc: UIAlertController?
+
+extension UIViewController {
+    
+    func showProgress() {
+        alertVc = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10,
+                                                                     y: 5,
+                                                                     width: 50,
+                                                                     height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.large
+        loadingIndicator.startAnimating()
+        
+        alertVc?.view.addSubview(loadingIndicator)
+        
+        mainThread {
+            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
+                self.present(alertVc ?? UIAlertController(), animated: true, completion: nil)
+            }, completion: nil)
+        }
+    }
+    
+    func dismissProgress(_ completion: SimpleCompletion) {
+        mainThread {
+            UIView.animate(withDuration: 0.5, animations: {
+                alertVc?.dismiss(animated: true, completion: nil)
+                completion?()
+            }) { _ in
+                alertVc = nil
+            }
+        }
+    }
+}
+
+
+extension UIViewController {
+    func showAlert(with message: String, handler: ((UIAlertAction)->Void)?) {
+        let alert = UIAlertController(title: "Quizz Result", message: "Congratulation!\nYour score is: \(message)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: handler))
+        present(alert, animated: true)
+    }
 }

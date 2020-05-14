@@ -12,7 +12,7 @@ protocol BreedsViewProtocol: class {
     func reloadData()
     func configureTableView()
     func showSpinner()
-    func hideSpinner()
+    func hideSpinner(_ completion: SimpleCompletion)
 }
 
 class BreedsViewController: UIViewController {
@@ -54,12 +54,14 @@ class BreedsViewController: UIViewController {
 extension BreedsViewController: BreedsViewProtocol {
     
     func showSpinner() {
-        AlertManager.shared.showProgress()
+        showProgress()
     }
     
-    func hideSpinner() {
-        AlertManager.shared.dismissProgress {}
-    }
+      func hideSpinner(_ completion: SimpleCompletion) {
+          dismissProgress {
+              completion?()
+          }
+      }
     
     func configureTableView() {
         tableView.dataSource = presenter as? UITableViewDataSource

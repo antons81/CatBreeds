@@ -20,3 +20,5 @@ func mainThreadAfter(_ deadline: Double, _ completion: (() ->())?) {
         completion?()
     }
 }
+
+typealias SimpleCompletion = (()->())?

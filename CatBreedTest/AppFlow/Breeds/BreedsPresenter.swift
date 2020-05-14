@@ -25,6 +25,7 @@ class BreedsPresenter: NSObject {
     var breeds = Breeds() {
         didSet {
             view?.reloadData()
+            view?.hideSpinner(nil)
         }
     }
 
@@ -54,6 +55,7 @@ extension BreedsPresenter: BreedsPresenterProtocol {
     }
     
     func fetchBreeds(_ limit: Int) {
+        view?.showSpinner()
         service.fetchBreeds(limit) { breeds in
             self.breeds = breeds
         }

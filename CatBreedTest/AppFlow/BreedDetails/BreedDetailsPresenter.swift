@@ -36,6 +36,7 @@ class BreedDetailsPresenter {
     }
     
     private func fetchImage(_  completion: ((UIImage) -> Void)?) {
+        view?.showSpinner()
         service.fetchImageBy(breedDetail.id) { image in
             guard let url = URL(string: image.url) else { return }
             guard let data = try? Data(contentsOf: url) else { return }
@@ -50,6 +51,7 @@ extension BreedDetailsPresenter: BreedDetailsPresenterProtocol {
         fetchImage { [weak self] image in
             guard let self = self else { return }
             self.view?.showDetails(self.breedDetail, image: image)
+            self.view?.hideSpinner(nil)
         }
     }
 }

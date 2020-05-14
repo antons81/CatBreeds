@@ -11,7 +11,7 @@ import UIKit
 protocol BreedDetailsViewProtocol: class {
     func showDetails(_ breed: BreedResponse, image: UIImage)
     func showSpinner()
-    func hideSpinner()
+    func hideSpinner(_ completion: SimpleCompletion)
 }
 
 class BreedDetailsViewController: UIViewController {
@@ -50,12 +50,14 @@ class BreedDetailsViewController: UIViewController {
 extension BreedDetailsViewController: BreedDetailsViewProtocol {
     
     func showSpinner() {
-        AlertManager.shared.showProgress()
+        showProgress()
     }
     
-    func hideSpinner() {
-        AlertManager.shared.dismissProgress {}
-    }
+      func hideSpinner(_ completion: SimpleCompletion) {
+          dismissProgress {
+              completion?()
+          }
+      }
     
     func showDetails(_ breed: BreedResponse, image: UIImage) {
         mainThread {
