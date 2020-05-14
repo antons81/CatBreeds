@@ -48,6 +48,7 @@
 		1E3B8E5F2469915E00E169DC /* QuizzConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B8E5B2469915E00E169DC /* QuizzConfigurator.swift */; };
 		1E3B8E6124699B9B00E169DC /* QuizzService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B8E6024699B9B00E169DC /* QuizzService.swift */; };
 		1E3B8E6324699CBD00E169DC /* BreedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B8E6224699CBD00E169DC /* BreedImage.swift */; };
+		1E755AC9246CBE8700490433 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E755AC8246CBE8700490433 /* ImageDownloader.swift */; };
 		1E8D9A1A246A8E00000C2CD3 /* BreedDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A19246A8E00000C2CD3 /* BreedDetailService.swift */; };
 		1E8D9A26246ADB0E000C2CD3 /* CatGalleryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A22246ADB0E000C2CD3 /* CatGalleryPresenter.swift */; };
 		1E8D9A27246ADB0E000C2CD3 /* CatGalleryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A23246ADB0E000C2CD3 /* CatGalleryRouter.swift */; };
@@ -109,6 +110,7 @@
 		1E3B8E5B2469915E00E169DC /* QuizzConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzConfigurator.swift; sourceTree = "<group>"; };
 		1E3B8E6024699B9B00E169DC /* QuizzService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzService.swift; sourceTree = "<group>"; };
 		1E3B8E6224699CBD00E169DC /* BreedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImage.swift; sourceTree = "<group>"; };
+		1E755AC8246CBE8700490433 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		1E8D9A19246A8E00000C2CD3 /* BreedDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailService.swift; sourceTree = "<group>"; };
 		1E8D9A22246ADB0E000C2CD3 /* CatGalleryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGalleryPresenter.swift; sourceTree = "<group>"; };
 		1E8D9A23246ADB0E000C2CD3 /* CatGalleryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGalleryRouter.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			children = (
 				1E3B8E3A2465C51500E169DC /* Utils.swift */,
 				1E8D9A41246C992F000C2CD3 /* AlertManager.swift */,
+				1E755AC8246CBE8700490433 /* ImageDownloader.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				1E3B8E0D246141D500E169DC /* BreedsCell.swift in Sources */,
 				1E3B8E302464A73A00E169DC /* NetworkManager.swift in Sources */,
 				1E8D9A37246B3620000C2CD3 /* ImageDetailRouter.swift in Sources */,
+				1E755AC9246CBE8700490433 /* ImageDownloader.swift in Sources */,
 				1E3B8E382465C4C400E169DC /* BreedsViewController.swift in Sources */,
 				1E3B8E372465C4C400E169DC /* BreedsRouter.swift in Sources */,
 				1E8D9A29246ADB0E000C2CD3 /* CatGalleryConfigurator.swift in Sources */,

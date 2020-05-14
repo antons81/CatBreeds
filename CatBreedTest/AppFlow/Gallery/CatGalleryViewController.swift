@@ -55,5 +55,6 @@ extension CatGalleryViewController: CatGalleryViewProtocol {
         collectionView.dataSource = presenter as? UICollectionViewDataSource
         collectionView.delegate = presenter as? UICollectionViewDelegate
         collectionView.registerCellNib(ImageCell.self)
+        collectionView.systemLayoutSizeFitting(.zero)
     }
 }

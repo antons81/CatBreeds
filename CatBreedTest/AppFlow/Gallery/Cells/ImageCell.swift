@@ -13,14 +13,29 @@ class ImageCell: UICollectionViewCell, NibReusable {
     
     @IBOutlet var catImage: UIImageView!
     @IBOutlet var indicator: UIActivityIndicatorView!
+    var isHeightCalculated: Bool = false
+    
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        //Exhibit A - We need to cache our calculation to prevent a crash.
+        if !isHeightCalculated {
+            setNeedsLayout()
+            layoutIfNeeded()
+            let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
+            var newFrame = layoutAttributes.frame
+            newFrame.size.width = CGFloat(ceilf(Float(size.width)))
+            layoutAttributes.frame = newFrame
+            isHeightCalculated = true
+        }
+        return layoutAttributes
+    }
     
     func setupImage(_ image: BreedImage) {
-        mainThread {
-            guard let url = URL(string: image.url) else { return }
-            guard let data = try? Data(contentsOf: url) else { return }
-            guard let image = UIImage(data: data) else { return }
-            self.catImage.image = image
-            self.indicator.stopAnimating()
+        guard let url = URL(string: image.url) else { return }
+        ImageDownloader.downloadCachedImage(with: url) { image in
+            mainThread {
+                self.catImage.image = image
+                self.indicator.stopAnimating()
+            }
         }
     }
     

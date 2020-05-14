@@ -27,12 +27,6 @@ class CatGalleryPresenter: NSObject {
         }
     }
     
-    private var img = [UIImage]() {
-        didSet {
-           view?.reloadData()
-        }
-    }
-    
     // MARK: - Initialization
     init(router: CatGalleryRouterProtocol,
          view: CatGalleryViewProtocol,
@@ -46,7 +40,6 @@ class CatGalleryPresenter: NSObject {
     private func fetchImages(_ page: Int, limit: Int) {
         service.fetchImages(page: page, limit: limit) { [weak self] images in
             self?.images = images
-            //URLSession.shared.
         }
     }
 }
@@ -54,7 +47,7 @@ class CatGalleryPresenter: NSObject {
 extension CatGalleryPresenter: CatGalleryPresenterProtocol {
     func viewDidLoad() {
         view?.configureCollectionView()
-        fetchImages(1, limit: 20)
+        fetchImages(1, limit: 30)
     }
 }
 
@@ -69,8 +62,8 @@ extension CatGalleryPresenter: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let image = images[indexPath.item]
         if let cell = cell as? ImageCell {
-            let image = images[indexPath.item]
             cell.setupImage(image)
         }
     }
