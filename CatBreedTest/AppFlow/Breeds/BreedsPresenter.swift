@@ -14,6 +14,7 @@ protocol BreedsPresenterProtocol: class {
     func fetchBreeds(_ limit: Int)
     func openQuizz()
     func openGallery()
+    func loadMoreBreeds()
 }
 
 
@@ -21,6 +22,9 @@ class BreedsPresenter: NSObject {
     
     // MARK: - Public variables
     internal weak var view: BreedsViewProtocol?
+    
+    var defaultLimit = 20
+    let bottomOffset: CGFloat = 10
     
     var breeds = Breeds() {
         didSet {
@@ -63,7 +67,12 @@ extension BreedsPresenter: BreedsPresenterProtocol {
     
     func viewDidLoad() {
         view?.configureTableView()
-        fetchBreeds(20)
+        fetchBreeds(defaultLimit)
+    }
+    
+    func loadMoreBreeds() {
+        defaultLimit += 20
+        fetchBreeds(defaultLimit)
     }
 }
 
@@ -92,3 +101,16 @@ extension BreedsPresenter: UITableViewDelegate {
     }
 }
 
+
+
+extension BreedsPresenter: UIScrollViewDelegate {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        if maximumOffset - currentOffset <= bottomOffset {
+            loadMoreBreeds()
+        }
+    }
+}

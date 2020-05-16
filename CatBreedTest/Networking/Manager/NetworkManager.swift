@@ -95,8 +95,8 @@ class NetworkManager {
         }
     }
     
-    func getImages(_ page: Int, limit: Int, completion: @escaping (_ breedImage: [BreedImage]?, _ error: String?) -> Void) {
-        router.request(.getImages(page: page, limit: limit)) { (data, response, error) in
+    func getImages(limit: Int, completion: @escaping (_ breedImage: [BreedImage]?, _ error: String?) -> Void) {
+        router.request(.getImages(limit: limit)) { (data, response, error) in
             
             if error != nil {
                 completion(nil, "please check your network connection")

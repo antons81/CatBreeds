@@ -27,6 +27,9 @@ class CatGalleryPresenter: NSObject {
         }
     }
     
+    var defaultLimit = 50
+    let bottomOffset: CGFloat = 10
+    
     // MARK: - Initialization
     init(router: CatGalleryRouterProtocol,
          view: CatGalleryViewProtocol,
@@ -38,16 +41,21 @@ class CatGalleryPresenter: NSObject {
     }
     
     private func fetchImages(_ page: Int, limit: Int) {
-        service.fetchImages(page: page, limit: limit) { [weak self] images in
+        service.fetchImages(limit: limit) { [weak self] images in
             self?.images = images
         }
+    }
+    
+    func loadMoreBreeds() {
+        defaultLimit += 50
+        fetchImages(0, limit: defaultLimit)
     }
 }
 
 extension CatGalleryPresenter: CatGalleryPresenterProtocol {
     func viewDidLoad() {
         view?.configureCollectionView()
-        fetchImages(1, limit: 30)
+        fetchImages(0, limit: defaultLimit)
     }
 }
 
@@ -85,3 +93,16 @@ extension CatGalleryPresenter: UICollectionViewDelegateFlowLayout {
         return CGSize(width: size - offset, height: size - offset)
     }
 }
+
+//
+//extension CatGalleryPresenter: UIScrollViewDelegate {
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        
+//        let currentOffset = scrollView.contentOffset.y
+//        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+//        
+//        if maximumOffset - currentOffset <= bottomOffset {
+//            loadMoreBreeds()
+//        }
+//    }
+//}

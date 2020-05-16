@@ -11,7 +11,7 @@ import UIKit.UIImage
 
 
 protocol ImageServiceProtocol {
-    func fetchImages(page: Int, limit: Int, completion: ((_ imageBreed: [BreedImage]) -> Void)?)
+    func fetchImages(limit: Int, completion: ((_ imageBreed: [BreedImage]) -> Void)?)
 }
 
 class ImageService {
@@ -20,8 +20,8 @@ class ImageService {
 
 extension ImageService: ImageServiceProtocol {
     
-    func fetchImages(page: Int, limit: Int, completion: ((_ imageBreed: [BreedImage]) -> Void)?) {
-        networkManager.getImages(page, limit: limit) {(imageModel, error) in
+    func fetchImages(limit: Int, completion: ((_ imageBreed: [BreedImage]) -> Void)?) {
+        networkManager.getImages(limit: limit) {(imageModel, error) in
             if let error = error {
                 print(error)
                 return
