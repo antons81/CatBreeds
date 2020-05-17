@@ -7,7 +7,6 @@
 //
 
 import Foundation
-//BreedDetailService
 
 protocol BreedDetailServiceProtocol {
     func fetchImageBy(_ breedId: String, completion: ((_ imageBreed: BreedImage) -> Void)?)
@@ -18,6 +17,7 @@ class BreedDetailService {
 }
 
 extension BreedDetailService: BreedDetailServiceProtocol {
+    
     func fetchImageBy(_ breedId: String, completion: ((_ imageBreed: BreedImage) -> Void)?) {
         networkManager.getImageBy(breedId) {(imageModel, error) in
             if let error = error {

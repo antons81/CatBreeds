@@ -44,7 +44,7 @@ class QuizzViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configurator?.config(viewController: self)
         presenter?.viewDidLoad()
         

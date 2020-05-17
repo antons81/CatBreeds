@@ -20,7 +20,6 @@ class BreedDetailsConfigurator {
 extension BreedDetailsConfigurator: BreedDetailsConfiguratorProtocol {
     
     func makeViewController(_ breedDetail: BreedResponse? = nil) -> BreedDetailsViewController {
-
         guard let viewController = BreedDetailsViewController.instatiateFromNib(.main) as? BreedDetailsViewController else {
             fatalError("Couldn't create viewController \(BreedDetailsViewController.vcName)")
         }

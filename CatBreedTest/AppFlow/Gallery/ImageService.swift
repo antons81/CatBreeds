@@ -26,6 +26,7 @@ extension ImageService: ImageServiceProtocol {
                 print(error)
                 return
             }
+            
             if let image = imageModel {
                 completion?(image)
             }

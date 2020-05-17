@@ -16,7 +16,7 @@ protocol CatGalleryPresenterProtocol: class {
 class CatGalleryPresenter: NSObject {
     // MARK: - Public variables
     internal weak var view: CatGalleryViewProtocol?
-
+    
     // MARK: - Private variables
     private let router: CatGalleryRouterProtocol
     private let service: ImageService

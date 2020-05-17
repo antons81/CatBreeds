@@ -10,7 +10,6 @@ import UIKit
 
 protocol NavigationRouterProtocol: class {
     var view: NavigationController? { get set }
-    func openNextScreen()
 }
 
 class NavigationRouter {
@@ -24,8 +23,4 @@ class NavigationRouter {
 
 }
 
-extension NavigationRouter: NavigationRouterProtocol {
-    func openNextScreen() {
-    }
-
-}
+extension NavigationRouter: NavigationRouterProtocol {}

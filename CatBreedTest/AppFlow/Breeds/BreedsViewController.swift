@@ -18,7 +18,6 @@ protocol BreedsViewProtocol: class {
 class BreedsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
     private let rowHeight: CGFloat = 70
     
     // MARK: - Public properties
@@ -47,7 +46,6 @@ class BreedsViewController: UIViewController {
     }
     
     // MARK: - Overrides
-    
     // MARK: - Private functions
 }
 
@@ -57,11 +55,11 @@ extension BreedsViewController: BreedsViewProtocol {
         showProgress()
     }
     
-      func hideSpinner(_ completion: SimpleCompletion) {
-          dismissProgress {
-              completion?()
-          }
-      }
+    func hideSpinner(_ completion: SimpleCompletion) {
+        dismissProgress {
+            completion?()
+        }
+    }
     
     func configureTableView() {
         tableView.dataSource = presenter as? UITableViewDataSource
@@ -71,7 +69,7 @@ extension BreedsViewController: BreedsViewProtocol {
         tableView.rowHeight = rowHeight
         tableView.registerCellNib(BreedsCell.self)
     }
-
+    
     func reloadData() {
         mainThread {
             self.tableView.reloadData()

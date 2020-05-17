@@ -10,7 +10,6 @@ import UIKit
 
 protocol ImageDetailRouterProtocol: class {
     var view: ImageDetailViewController? { get set }
-    func openNextScreen()
 }
 
 class ImageDetailRouter {
@@ -24,8 +23,4 @@ class ImageDetailRouter {
 
 }
 
-extension ImageDetailRouter: ImageDetailRouterProtocol {
-    func openNextScreen() {
-    }
-
-}
+extension ImageDetailRouter: ImageDetailRouterProtocol {}

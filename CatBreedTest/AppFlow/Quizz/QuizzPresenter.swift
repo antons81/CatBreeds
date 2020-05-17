@@ -45,7 +45,7 @@ extension QuizzPresenter: QuizzPresenterProtocol {
         service.fetchBreeds(page: page) { [weak self] breeds in
             guard let self = self else { return }
             
-            // check if breeds less than 4 end game
+            // check if breeds less than 4 (no more breeds fetched) then end game
             if self.view?.answerButtonsCount != breeds.count  {
                 mainThread {
                     self.view?.hideSpinner ({
@@ -63,7 +63,7 @@ extension QuizzPresenter: QuizzPresenterProtocol {
                 randomIndex = Int(arc4random()) % breeds.count
                 break
             }
-
+            
             self.service.fetchImageBy(breeds[randomIndex].id) { [weak self] image in
                 guard let url = URL(string: image.url) else { return }
                 guard let data = try? Data(contentsOf: url) else { return }

@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 protocol BreedsServiceProtocol {
     func fetchBreeds(_ limit: Int, completion: ((_ breeds: Breeds) -> Void)?)
 }

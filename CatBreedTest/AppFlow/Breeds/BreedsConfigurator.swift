@@ -13,20 +13,18 @@ protocol BreedsConfiguratorProtocol: class {
     func config(viewController: BreedsViewController)
 }
 
-class BreedsConfigurator {
-}
+class BreedsConfigurator {}
 
 extension BreedsConfigurator: BreedsConfiguratorProtocol {
     
     func makeViewController() -> BreedsViewController {
-
         guard let viewController = BreedsViewController.instatiateFromNib( .main) as? BreedsViewController else {
             fatalError("Could not init \(String(describing: BreedsViewController.self))")
         }
         viewController.configurator = self
         return viewController
     }
-
+    
     func config(viewController: BreedsViewController) {
         let service = BreedsService()
         let router = BreedsRouter(view: viewController)

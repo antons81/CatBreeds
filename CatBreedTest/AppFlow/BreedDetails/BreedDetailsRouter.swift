@@ -10,10 +10,10 @@ import UIKit
 
 protocol BreedDetailsRouterProtocol: class {
     var view: BreedDetailsViewController? { get set }
-    func openNextScreen()
 }
 
 class BreedDetailsRouter {
+    
     // MARK: - Public variables
     internal weak var view: BreedDetailsViewController?
     
@@ -21,11 +21,6 @@ class BreedDetailsRouter {
     init(view: BreedDetailsViewController) {
         self.view = view
     }
-
 }
 
-extension BreedDetailsRouter: BreedDetailsRouterProtocol {
-    func openNextScreen() {
-    }
-
-}
+extension BreedDetailsRouter: BreedDetailsRouterProtocol {}

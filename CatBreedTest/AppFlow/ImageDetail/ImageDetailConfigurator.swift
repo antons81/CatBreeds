@@ -29,11 +29,10 @@ extension ImageDetailConfigurator: ImageDetailConfiguratorProtocol {
         viewController.configurator = self
         return viewController
     }
-
+    
     func config(viewController: ImageDetailViewController) {
         let router = ImageDetailRouter(view: viewController)
         let presenter = ImageDetailPresenter(router: router, view: viewController, image: self.image)
         viewController.presenter = presenter
     }
-
 }
