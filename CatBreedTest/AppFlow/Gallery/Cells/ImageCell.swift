@@ -16,7 +16,7 @@ class ImageCell: UICollectionViewCell, NibReusable {
     var isHeightCalculated: Bool = false
     
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-        //Exhibit A - We need to cache our calculation to prevent a crash.
+        
         if !isHeightCalculated {
             setNeedsLayout()
             layoutIfNeeded()
@@ -26,6 +26,7 @@ class ImageCell: UICollectionViewCell, NibReusable {
             layoutAttributes.frame = newFrame
             isHeightCalculated = true
         }
+        
         return layoutAttributes
     }
     
@@ -42,5 +43,6 @@ class ImageCell: UICollectionViewCell, NibReusable {
     override func prepareForReuse() {
         super.prepareForReuse()
         catImage.image = nil
+        indicator.startAnimating()
     }
 }

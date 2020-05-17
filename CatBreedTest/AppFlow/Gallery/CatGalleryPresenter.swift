@@ -27,7 +27,7 @@ class CatGalleryPresenter: NSObject {
         }
     }
     
-    var defaultLimit = 50
+    var defaultLimit = 100
     let bottomOffset: CGFloat = 10
     
     // MARK: - Initialization
@@ -40,7 +40,7 @@ class CatGalleryPresenter: NSObject {
         self.service = service
     }
     
-    private func fetchImages(_ page: Int, limit: Int) {
+    private func fetchImages(limit: Int) {
         service.fetchImages(limit: limit) { [weak self] images in
             self?.images = images
         }
@@ -48,14 +48,14 @@ class CatGalleryPresenter: NSObject {
     
     func loadMoreBreeds() {
         defaultLimit += 50
-        fetchImages(0, limit: defaultLimit)
+        fetchImages(limit: defaultLimit)
     }
 }
 
 extension CatGalleryPresenter: CatGalleryPresenterProtocol {
     func viewDidLoad() {
         view?.configureCollectionView()
-        fetchImages(0, limit: defaultLimit)
+        fetchImages(limit: defaultLimit)
     }
 }
 
