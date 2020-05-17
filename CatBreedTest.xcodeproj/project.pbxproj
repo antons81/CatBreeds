@@ -156,7 +156,6 @@
 		1E3B8DF3246140C300E169DC /* CatBreedTest */ = {
 			isa = PBXGroup;
 			children = (
-				1E8D9A1C246ACF4A000C2CD3 /* CustomUI */,
 				1E3B8E572469913600E169DC /* AppFlow */,
 				1E3B8E092461410A00E169DC /* Networking */,
 				1E3B8E082461410100E169DC /* Extensions */,
@@ -310,13 +309,6 @@
 				1E8D9A31246B3602000C2CD3 /* ImageDetail */,
 			);
 			path = AppFlow;
-			sourceTree = "<group>";
-		};
-		1E8D9A1C246ACF4A000C2CD3 /* CustomUI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CustomUI;
 			sourceTree = "<group>";
 		};
 		1E8D9A21246ADACA000C2CD3 /* Gallery */ = {
