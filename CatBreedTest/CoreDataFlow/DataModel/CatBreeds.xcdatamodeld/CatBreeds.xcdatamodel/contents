@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Breed" representedClassName=".Breed" syncable="YES">
+        <attribute name="desc" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="lifeSpan" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="origin" attributeType="String"/>
+        <attribute name="temperament" attributeType="String"/>
+    </entity>
+    <entity name="Gallery" representedClassName=".Gallery" syncable="YES">
+        <attribute name="url" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Breed" positionX="-378.4453125" positionY="24.5078125" width="128" height="133"/>
+        <element name="Gallery" positionX="-63.84375" positionY="116.5234375" width="128" height="58"/>
+    </elements>
+</model>

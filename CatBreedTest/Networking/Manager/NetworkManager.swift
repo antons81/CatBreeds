@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 enum NetworkResponse: String {
     case success
@@ -27,6 +28,8 @@ class NetworkManager {
     
     private let router = Router<BreedsApi>()
     
+    private var managedContext = CoreDataManager.shared.defaultContext
+    
     fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String> {
         switch response.statusCode {
         case 200...299: return .success
@@ -37,8 +40,7 @@ class NetworkManager {
     }
     
     func getCatBreeds(page: Int, limit: Int, completion: @escaping (_ breeds: Breeds?, _ error: String?) -> Void) {
-        
-        router.request(.getBreeds(page: page, limit: limit)) { (data, response, error) in
+        router.request(.getBreeds(page: page, limit: 1000)) { (data, response, error) in
             
             if error != nil {
                 completion(nil, "please check your network connection")
@@ -54,8 +56,42 @@ class NetworkManager {
                         return
                     }
                     do {
-                        let apiResponse = try JSONDecoder().decode(Breeds.self, from: data)
-                        completion(apiResponse, nil)
+                        
+                        guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] else {
+                            return
+                        }
+                        
+                        let breeds: Breeds = json.compactMap { [weak self] in
+                            
+                            guard let self = self,
+                                let id = $0["id"] as? String,
+                                let name = $0["name"] as? String,
+                                let desc = $0["description"] as? String,
+                                let temperament = $0["temperament"] as? String,
+                                let origin  = $0["origin"] as? String,
+                                let lifeSpan = $0["life_span"] as? String else {
+                                    return nil
+                            }
+                            
+                        
+                            let breed = Breed(context: self.managedContext)
+                            breed.id = id
+                            breed.name = name
+                            breed.desc = desc
+                            breed.temperament = temperament
+                            breed.origin = origin
+                            breed.lifeSpan = lifeSpan
+                            
+                            return breed
+                        }
+                        
+                        
+                        CoreDataManager.shared.saveContext(with: self.managedContext) {
+                            completion(breeds, nil)
+                        }
+                        //let apiResponse = try JSONDecoder().decode(Breeds.self, from: data)
+                        //self.insertBreeds(breeds: apiResponse)
+                        //completion(apiResponse, nil)
                     } catch {
                         completion(nil, NetworkResponse.unableToDecode.rawValue)
                     }
@@ -124,6 +160,29 @@ class NetworkManager {
         }
     }
     
+    // MARK: - CoreData Rerquests
+    
+    private func insertBreeds(breeds: [Breed]) {
+        
+        if breeds.count > 0 {
+            CoreDataManager.shared.deleteAllData(.breed, completion: nil)
+        }
+        
+        for breed in breeds {
+            
+            let breeds = Breed(context: self.managedContext)
+            breeds.id = breed.id
+            breeds.name = breed.name
+            breeds.desc = breed.description
+            breeds.temperament = breed.temperament
+            breeds.origin = breed.origin
+            breeds.lifeSpan = breed.lifeSpan
+            
+        }
+        
+        CoreDataManager.shared.saveContext(with: self.managedContext,
+                                           completion: nil)
+    }
 }
 
 

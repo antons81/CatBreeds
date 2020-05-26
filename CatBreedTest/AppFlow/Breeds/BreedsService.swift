@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol BreedsServiceProtocol {
     func fetchBreeds(_ limit: Int, completion: ((_ breeds: Breeds) -> Void)?)
@@ -19,14 +20,18 @@ class BreedsService {
 extension BreedsService: BreedsServiceProtocol {
     
     func fetchBreeds(_ limit: Int, completion: ((_ breeds: Breeds) -> Void)?) {
-        networkManager.getCatBreeds(page: 0, limit: limit, completion: { cats, error in
-            if let error = error {
-                print(error)
-                return
-            }
-            if let cats = cats {
-                completion?(cats)
-            }
-        })
+        
+        CoreDataManager.shared.deleteAllData(.breed) {
+            
+            self.networkManager.getCatBreeds(page: 0, limit: limit, completion: { breeds, error in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                if let breeds = breeds {
+                    completion?(breeds)
+                }
+            })
+        }
     }
 }

@@ -23,7 +23,7 @@ class BreedsPresenter: NSObject {
     // MARK: - Public variables
     internal weak var view: BreedsViewProtocol?
     
-    var defaultLimit = 20
+    var defaultLimit = 1000
     let bottomOffset: CGFloat = 10
     
     var breeds = Breeds() {
@@ -61,7 +61,11 @@ extension BreedsPresenter: BreedsPresenterProtocol {
     func fetchBreeds(_ limit: Int) {
         view?.showSpinner()
         service.fetchBreeds(limit) { breeds in
-            self.breeds = breeds
+            
+            CoreDataManager.shared.fetchData(entity: .breed, completion: { breeds  in
+           
+            })
+            
         }
     }
     

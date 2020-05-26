@@ -9,17 +9,17 @@
 import UIKit
 
 protocol BreedDetailsConfiguratorProtocol: class {
-    func makeViewController(_ breedDetail: BreedResponse?) -> BreedDetailsViewController
+    func makeViewController(_ breedDetail: Breed?) -> BreedDetailsViewController
     func config(viewController: BreedDetailsViewController)
 }
 
 class BreedDetailsConfigurator {
-    var breedDetail: BreedResponse!
+    var breedDetail: Breed!
 }
 
 extension BreedDetailsConfigurator: BreedDetailsConfiguratorProtocol {
     
-    func makeViewController(_ breedDetail: BreedResponse? = nil) -> BreedDetailsViewController {
+    func makeViewController(_ breedDetail: Breed? = nil) -> BreedDetailsViewController {
         guard let viewController = BreedDetailsViewController.instatiateFromNib(.main) as? BreedDetailsViewController else {
             fatalError("Couldn't create viewController \(BreedDetailsViewController.vcName)")
         }

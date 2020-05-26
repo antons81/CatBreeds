@@ -20,13 +20,13 @@ class BreedDetailsPresenter {
 
     // MARK: - Private variables
     private let router: BreedDetailsRouterProtocol
-    private let breedDetail: BreedResponse
+    private let breedDetail: Breed
     private var service: BreedDetailService
     
     // MARK: - Initialization
     init(router: BreedDetailsRouterProtocol,
          view: BreedDetailsViewProtocol,
-         breed: BreedResponse,
+         breed: Breed,
          service: BreedDetailService) {
 
         self.router = router
@@ -36,7 +36,8 @@ class BreedDetailsPresenter {
     }
     
     private func fetchImage(_  completion: ((UIImage) -> Void)?) {
-        service.fetchImageBy(breedDetail.id) { image in
+        guard let breedId = breedDetail.id else { return }
+        service.fetchImageBy(breedId) { image in
             guard let url = URL(string: image.url) else { return }
             guard let data = try? Data(contentsOf: url) else { return }
             guard let image  = UIImage(data: data) else { return }

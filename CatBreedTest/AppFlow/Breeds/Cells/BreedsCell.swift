@@ -12,7 +12,7 @@ class BreedsCell: UITableViewCell, NibReusable {
     
     @IBOutlet weak var breed: UILabel!
     
-    func setupCell(_ cat: BreedResponse) {
+    func setupCell(_ cat: Breed) {
         breed.text = cat.name
     }
 }

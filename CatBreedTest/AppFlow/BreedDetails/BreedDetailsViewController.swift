@@ -9,7 +9,7 @@
 import UIKit
 
 protocol BreedDetailsViewProtocol: class {
-    func showDetails(_ breed: BreedResponse, image: UIImage)
+    func showDetails(_ breed: Breed, image: UIImage)
     func showSpinner()
     func hideSpinner(_ completion: SimpleCompletion)
 }
@@ -59,12 +59,12 @@ extension BreedDetailsViewController: BreedDetailsViewProtocol {
           }
       }
     
-    func showDetails(_ breed: BreedResponse, image: UIImage) {
+    func showDetails(_ breed: Breed, image: UIImage) {
         mainThread {
             self.name.text = breed.name
-            self.desc.text = breed.description
+            self.desc.text = breed.desc
             self.temperament.text = breed.temperament
-            self.lifeSpan.text = breed.lifeSpan + " years"
+            self.lifeSpan.text = breed.lifeSpan ?? "" + " years"
             self.origin.text = breed.origin
             self.breedImage.image = image
         }

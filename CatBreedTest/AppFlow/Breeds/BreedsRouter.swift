@@ -10,7 +10,7 @@ import Foundation
 
 protocol BreedsRouterProtocol: class {
     var view: BreedsViewController? { get set }
-    func openBreedDetails(_ breed: BreedResponse)
+    func openBreedDetails(_ breed: Breed)
     func openQuizz()
     func openGallery()
 }
@@ -38,7 +38,7 @@ extension BreedsRouter: BreedsRouterProtocol {
         view?.navigationController?.show(quizz, sender: self)
     }
     
-    func openBreedDetails(_ breed: BreedResponse) {
+    func openBreedDetails(_ breed: Breed) {
         let details = BreedDetailsConfigurator().makeViewController(breed)
         view?.navigationController?.show(details, sender: self)
     }

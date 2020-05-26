@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E2C78622476D16100B2A791 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C78612476D16100B2A791 /* CoreDataManager.swift */; };
+		1E2C786A2476D55000B2A791 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C78692476D55000B2A791 /* Entities.swift */; };
 		1E3B8DF5246140C300E169DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B8DF4246140C300E169DC /* AppDelegate.swift */; };
 		1E3B8DF7246140C300E169DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B8DF6246140C300E169DC /* SceneDelegate.swift */; };
 		1E3B8DFC246140C300E169DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3B8DFA246140C300E169DC /* Main.storyboard */; };
@@ -49,6 +51,7 @@
 		1E3B8E6124699B9B00E169DC /* QuizzService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B8E6024699B9B00E169DC /* QuizzService.swift */; };
 		1E3B8E6324699CBD00E169DC /* BreedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3B8E6224699CBD00E169DC /* BreedImage.swift */; };
 		1E755AC9246CBE8700490433 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E755AC8246CBE8700490433 /* ImageDownloader.swift */; };
+		1E755AD024730A9900490433 /* CatBreeds.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1E755ACE24730A9900490433 /* CatBreeds.xcdatamodeld */; };
 		1E8D9A1A246A8E00000C2CD3 /* BreedDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A19246A8E00000C2CD3 /* BreedDetailService.swift */; };
 		1E8D9A26246ADB0E000C2CD3 /* CatGalleryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A22246ADB0E000C2CD3 /* CatGalleryPresenter.swift */; };
 		1E8D9A27246ADB0E000C2CD3 /* CatGalleryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9A23246ADB0E000C2CD3 /* CatGalleryRouter.swift */; };
@@ -66,6 +69,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E2C78612476D16100B2A791 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		1E2C78692476D55000B2A791 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		1E3B8DF1246140C300E169DC /* CatBreedTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatBreedTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3B8DF4246140C300E169DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E3B8DF6246140C300E169DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +115,7 @@
 		1E3B8E6024699B9B00E169DC /* QuizzService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzService.swift; sourceTree = "<group>"; };
 		1E3B8E6224699CBD00E169DC /* BreedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImage.swift; sourceTree = "<group>"; };
 		1E755AC8246CBE8700490433 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		1E755ACF24730A9900490433 /* CatBreeds.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CatBreeds.xcdatamodel; sourceTree = "<group>"; };
 		1E8D9A19246A8E00000C2CD3 /* BreedDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailService.swift; sourceTree = "<group>"; };
 		1E8D9A22246ADB0E000C2CD3 /* CatGalleryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGalleryPresenter.swift; sourceTree = "<group>"; };
 		1E8D9A23246ADB0E000C2CD3 /* CatGalleryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGalleryRouter.swift; sourceTree = "<group>"; };
@@ -156,6 +162,7 @@
 		1E3B8DF3246140C300E169DC /* CatBreedTest */ = {
 			isa = PBXGroup;
 			children = (
+				1E755ACA24730A3800490433 /* CoreDataFlow */,
 				1E3B8E572469913600E169DC /* AppFlow */,
 				1E3B8E092461410A00E169DC /* Networking */,
 				1E3B8E082461410100E169DC /* Extensions */,
@@ -309,6 +316,40 @@
 				1E8D9A31246B3602000C2CD3 /* ImageDetail */,
 			);
 			path = AppFlow;
+			sourceTree = "<group>";
+		};
+		1E755ACA24730A3800490433 /* CoreDataFlow */ = {
+			isa = PBXGroup;
+			children = (
+				1E755ACD24730A6600490433 /* DataModel */,
+				1E755ACC24730A5500490433 /* CoreDataManager */,
+				1E755ACB24730A4700490433 /* ManagedModels */,
+			);
+			path = CoreDataFlow;
+			sourceTree = "<group>";
+		};
+		1E755ACB24730A4700490433 /* ManagedModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ManagedModels;
+			sourceTree = "<group>";
+		};
+		1E755ACC24730A5500490433 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				1E2C78612476D16100B2A791 /* CoreDataManager.swift */,
+			);
+			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		1E755ACD24730A6600490433 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				1E2C78692476D55000B2A791 /* Entities.swift */,
+				1E755ACE24730A9900490433 /* CatBreeds.xcdatamodeld */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		1E8D9A21246ADACA000C2CD3 /* Gallery */ = {
@@ -483,6 +524,9 @@
 				1E3B8E5F2469915E00E169DC /* QuizzConfigurator.swift in Sources */,
 				1E3B8E242462F11700E169DC /* ParameterEncoding.swift in Sources */,
 				1E3B8DF7246140C300E169DC /* SceneDelegate.swift in Sources */,
+				1E2C786A2476D55000B2A791 /* Entities.swift in Sources */,
+				1E2C78622476D16100B2A791 /* CoreDataManager.swift in Sources */,
+				1E755AD024730A9900490433 /* CatBreeds.xcdatamodeld in Sources */,
 				1E8D9A28246ADB0E000C2CD3 /* CatGalleryViewController.swift in Sources */,
 				1E3B8E162461769D00E169DC /* Constants.swift in Sources */,
 			);
@@ -682,6 +726,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1E755ACE24730A9900490433 /* CatBreeds.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1E755ACF24730A9900490433 /* CatBreeds.xcdatamodel */,
+			);
+			currentVersion = 1E755ACF24730A9900490433 /* CatBreeds.xcdatamodel */;
+			path = CatBreeds.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1E3B8DE9246140C300E169DC /* Project object */;
 }

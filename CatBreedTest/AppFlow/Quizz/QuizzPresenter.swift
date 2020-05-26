@@ -64,7 +64,7 @@ extension QuizzPresenter: QuizzPresenterProtocol {
                 break
             }
             
-            self.service.fetchImageBy(breeds[randomIndex].id) { [weak self] image in
+            self.service.fetchImageBy(breeds[randomIndex].id ?? "") { [weak self] image in
                 guard let url = URL(string: image.url) else { return }
                 guard let data = try? Data(contentsOf: url) else { return }
                 guard let image  = UIImage(data: data) else { return }
