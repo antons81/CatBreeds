@@ -26,8 +26,7 @@ class QuizzViewController: UIViewController {
     @IBOutlet var answer2: UIButton!
     @IBOutlet var answer3: UIButton!
     @IBOutlet var answer4: UIButton!
-    
-    @IBOutlet var scoreButton: UIBarButtonItem!
+    @IBOutlet var scoreLabel: UILabel!
     
     var answerButtons: [UIButton]!
     
@@ -111,7 +110,7 @@ extension QuizzViewController: QuizzViewProtocol {
         rightAnswer = answer
         
         mainThread {
-            self.scoreButton.title = "Score: \(self.score)"
+            self.scoreLabel.text = "Score: \(self.score)"
             self.questionImage.image = image
         }
         
