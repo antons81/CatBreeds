@@ -25,6 +25,7 @@ class BreedsPresenter: NSObject {
     
     var defaultLimit = 20
     let bottomOffset: CGFloat = 10
+    private var breedsOffset = 20
     
     var breeds = Breeds() {
         didSet {
@@ -71,7 +72,7 @@ extension BreedsPresenter: BreedsPresenterProtocol {
     }
     
     func loadMoreBreeds() {
-        defaultLimit += 20
+        defaultLimit += breedsOffset
         fetchBreeds(defaultLimit)
     }
 }

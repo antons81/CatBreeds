@@ -32,7 +32,6 @@ class QuizzPresenter {
         self.view = view
         self.service = service
     }
-
 }
 
 extension QuizzPresenter: QuizzPresenterProtocol {
@@ -65,9 +64,10 @@ extension QuizzPresenter: QuizzPresenterProtocol {
             }
             
             self.service.fetchImageBy(breeds[randomIndex].id) { [weak self] image in
-                guard let url = URL(string: image.url) else { return }
-                guard let data = try? Data(contentsOf: url) else { return }
-                guard let image  = UIImage(data: data) else { return }
+                guard let url = URL(string: image.url),
+                      let data = try? Data(contentsOf: url),
+                      let image  = UIImage(data: data) else { return }
+               
                 
                 self?.view?.composeQA(breeds, answer: randomIndex, image: image) {
                     self?.view?.hideSpinner(nil)

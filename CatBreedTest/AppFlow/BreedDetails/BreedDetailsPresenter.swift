@@ -37,9 +37,9 @@ class BreedDetailsPresenter {
     
     private func fetchImage(_  completion: ((UIImage) -> Void)?) {
         service.fetchImageBy(breedDetail.id) { image in
-            guard let url = URL(string: image.url) else { return }
-            guard let data = try? Data(contentsOf: url) else { return }
-            guard let image  = UIImage(data: data) else { return }
+            guard let url = URL(string: image.url),
+                  let data = try? Data(contentsOf: url),
+                  let image  = UIImage(data: data) else { return }
             completion?(image)
         }
     }
