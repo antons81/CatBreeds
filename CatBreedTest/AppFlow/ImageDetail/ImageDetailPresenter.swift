@@ -38,6 +38,6 @@ extension ImageDetailPresenter: ImageDetailPresenterProtocol {
     }
     
     func viewDidLoad() {
-        setImage(self.image)
+        setImage(image)
     }
 }

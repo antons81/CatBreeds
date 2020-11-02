@@ -23,7 +23,9 @@ extension ImageService: ImageServiceProtocol {
     func fetchImages(limit: Int, completion: ((_ imageBreed: [BreedImage]) -> Void)?) {
         networkManager.getImages(limit: limit) {(imageModel, error) in
             if let error = error {
+                #if DEBUG
                 print(error)
+                #endif
                 return
             }
             

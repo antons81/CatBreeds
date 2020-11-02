@@ -24,9 +24,12 @@ extension QuizzService: QuizzServiceProtocol {
     func fetchBreeds(page: Int, completion: ((_ breeds: Breeds) -> Void)?) {
         networkManager.getCatBreeds(page: page, limit: 4, completion: { cats, error in
             if let error = error {
+                #if DEBUG
                 print(error)
+                #endif
                 return
             }
+            
             if let cats = cats {
                 completion?(cats)
             }
@@ -36,9 +39,12 @@ extension QuizzService: QuizzServiceProtocol {
     func fetchImageBy(_ breedId: String, completion: ((_ imageBreed: BreedImage) -> Void)?) {
         networkManager.getImageBy(breedId) {(imageModel, error) in
             if let error = error {
+                #if DEBUG
                 print(error)
+                #endif
                 return
             }
+            
             if let image = imageModel?.first {
                 completion?(image)
             }

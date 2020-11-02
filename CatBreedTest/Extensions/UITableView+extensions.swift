@@ -12,6 +12,7 @@ import UIKit
 protocol Reusable: class {
     static var reuseIdentifier: String { get }
 }
+
 extension Reusable {
     static var reuseIdentifier: String { return String(describing: self) }
 }
@@ -27,7 +28,6 @@ extension NibReusable {
 }
 
 extension UITableView {
-    
     func registerCellNib<T: UITableViewCell>(_: T.Type) where T: NibReusable {
         let nib = UINib(nibName: String(describing: T.self), bundle: nil)
         self.register(nib, forCellReuseIdentifier: T.reuseIdentifier)
@@ -40,7 +40,6 @@ extension UITableView {
 
 
 extension UICollectionView {
-    
     func registerCellNib<T: UICollectionViewCell>(_: T.Type) where T: NibReusable {
         let nib = UINib(nibName: String(describing: T.self), bundle: nil)
         self.register(nib, forCellWithReuseIdentifier: T.reuseIdentifier)

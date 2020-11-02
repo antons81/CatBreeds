@@ -21,9 +21,12 @@ extension BreedDetailService: BreedDetailServiceProtocol {
     func fetchImageBy(_ breedId: String, completion: ((_ imageBreed: BreedImage) -> Void)?) {
         networkManager.getImageBy(breedId) {(imageModel, error) in
             if let error = error {
+                #if DEBUG
                 print(error)
+                #endif
                 return
             }
+            
             if let image = imageModel?.first {
                 completion?(image)
             }

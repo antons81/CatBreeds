@@ -160,9 +160,8 @@
 				1E3B8E092461410A00E169DC /* Networking */,
 				1E3B8E082461410100E169DC /* Extensions */,
 				1E8D9A43246C9E95000C2CD3 /* Utils */,
-				1E3B8DF4246140C300E169DC /* AppDelegate.swift */,
-				1E3B8DF6246140C300E169DC /* SceneDelegate.swift */,
-				1E3B8DFA246140C300E169DC /* Main.storyboard */,
+				1EEE19C7254FE2A300335CC0 /* AppDelegate */,
+				1EEE19C9254FE2B900335CC0 /* UI */,
 				1E8D9A3C246B3E1A000C2CD3 /* SupportedFiles */,
 				1E3B8DFD246140C600E169DC /* Assets.xcassets */,
 				1E3B8DFF246140C600E169DC /* LaunchScreen.storyboard */,
@@ -361,6 +360,23 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		1EEE19C7254FE2A300335CC0 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1E3B8DF4246140C300E169DC /* AppDelegate.swift */,
+				1E3B8DF6246140C300E169DC /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		1EEE19C9254FE2B900335CC0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1E3B8DFA246140C300E169DC /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -371,6 +387,7 @@
 				1E3B8DED246140C300E169DC /* Sources */,
 				1E3B8DEE246140C300E169DC /* Frameworks */,
 				1E3B8DEF246140C300E169DC /* Resources */,
+				1E96FD3C24A3746C002F4452 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -429,6 +446,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E96FD3C24A3746C002F4452 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#agvtool next-version -all\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$PRODUCT_SETTINGS_PATH\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$PRODUCT_SETTINGS_PATH\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1E3B8DED246140C300E169DC /* Sources */ = {
