@@ -23,10 +23,6 @@ class BreedsPresenter: NSObject {
     // MARK: - Public variables
     internal weak var view: BreedsViewProtocol?
     
-    var defaultLimit = 20
-    let bottomOffset: CGFloat = 10
-    private var breedsOffset = 20
-    
     var breeds = Breeds() {
         didSet {
             view?.reloadData()
@@ -37,6 +33,10 @@ class BreedsPresenter: NSObject {
     // MARK: - Private variables
     private let router: BreedsRouterProtocol
     private let service: BreedsService
+    
+    private var defaultLimit = 20
+    private let bottomOffset: CGFloat = 10
+    private var breedsOffset = 20
     
     // MARK: - Initialization
     init(router: BreedsRouterProtocol,

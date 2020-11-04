@@ -15,6 +15,7 @@ protocol QuizzViewProtocol: class {
     func showSpinner()
     func hideSpinner(_ completion: SimpleCompletion)
     func showAlert(with message: String, handler: ((UIAlertAction)->Void)?)
+    func setupDefaultButtonState(_ sender: UIButton)
 }
 
 class QuizzViewController: UIViewController {
@@ -63,7 +64,6 @@ class QuizzViewController: UIViewController {
         }) { _ in
             mainThreadAfter(0.3) {
                 self.presenter?.fetchBreeds(self.page)
-                sender.backgroundColor = .systemBlue
             }
         }
     }
@@ -87,6 +87,10 @@ class QuizzViewController: UIViewController {
 
 extension QuizzViewController: QuizzViewProtocol {
     
+    func setupDefaultButtonState(_ sender: UIButton) {
+        sender.backgroundColor = .systemBlue
+    }
+    
     var finalScore: Int {
         return score
     }
@@ -97,7 +101,6 @@ extension QuizzViewController: QuizzViewProtocol {
     
     func showSpinner() {
         showProgress()
-        
     }
     
     func hideSpinner(_ completion: SimpleCompletion) {
@@ -118,6 +121,7 @@ extension QuizzViewController: QuizzViewProtocol {
             mainThread {
                 value.tag = index
                 value.setTitle(breeds[index].name, for: .normal)
+                self.setupDefaultButtonState(value)
             }
         }
         

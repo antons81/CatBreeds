@@ -29,7 +29,6 @@ extension QuizzService: QuizzServiceProtocol {
                 #endif
                 return
             }
-            
             if let cats = cats {
                 completion?(cats)
             }
@@ -44,7 +43,6 @@ extension QuizzService: QuizzServiceProtocol {
                 #endif
                 return
             }
-            
             if let image = imageModel?.first {
                 completion?(image)
             }
